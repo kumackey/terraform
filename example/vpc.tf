@@ -115,3 +115,12 @@ resource "aws_route" "private_1" {
   nat_gateway_id = aws_nat_gateway.nat_gateway_1.id
   destination_cidr_block = "0.0.0.0/0"
 }
+
+module "example_sg" {
+  source = "./security_group"
+  name = "module-sg"
+  vpc_id = aws_vpc.example.id
+  port = 80
+  cider_blocks = [
+    "0.0.0.0/0"]
+}
