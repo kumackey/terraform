@@ -16,9 +16,10 @@ resource "aws_security_group_rule" "ingress_example" {
   security_group_id = aws_security_group.default.id
   to_port = var.port
   type = "ingress"
+  cidr_blocks = var.cider_blocks
 }
 
-resource "aws_security_group_rule" "ingress_example" {
+resource "aws_security_group_rule" "egress_example" {
   from_port = 0
   protocol = "-1"
   security_group_id = aws_security_group.default.id

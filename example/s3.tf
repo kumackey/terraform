@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "private" {
-  bucket = "private-pragmatic-terraform"
+  bucket = "private-pragmatic-terraform-kumackey-20220915"
   versioning {
     enabled = true
   }
@@ -22,7 +22,7 @@ resource "aws_s3_bucket_public_access_block" "private" {
 }
 
 resource "aws_s3_bucket" "public" {
-  bucket = "public-pragmatic-terraform"
+  bucket = "public-pragmatic-terraform-kumackey-20220915"
   acl = "public-read"
 
   cors_rule {
@@ -37,7 +37,7 @@ resource "aws_s3_bucket" "public" {
 }
 
 resource "aws_s3_bucket" "alb_log" {
-  bucket = "alb-log-pragmatic-terraform"
+  bucket = "alb-log-pragmatic-terraform-kumackey-20220915"
 
   lifecycle_rule {
     enabled = true
@@ -70,6 +70,6 @@ data "aws_iam_policy_document" "alb_log" {
 }
 
 resource "aws_s3_bucket" "force_destroy" {
-  bucket = "force-destroy-pragmatic-terraform"
+  bucket = "force-destroy-pragmatic-terraform-kumackey-20220915"
   force_destroy = true
 }
