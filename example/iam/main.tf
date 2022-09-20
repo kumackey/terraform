@@ -13,7 +13,8 @@ data "aws_iam_policy_document" "ec2_assume_role" {
       "sts:AssumeRole"]
     principals {
       identifiers = [
-        "ec2.amazonaws.com"]
+        var.identifier
+      ]
       type = "Service"
     }
   }
