@@ -13,6 +13,16 @@
     },
     "command": [
       "/bin/date"
+    ],
+    "secrets": [
+      {
+        "name": "DB_USERNAME",
+        "valueFrom": "/db/username"
+      },
+      {
+        "name": "DB_PASSWORD",
+        "valueFrom": "/db/password"
+      }
     ]
   }
 ]
